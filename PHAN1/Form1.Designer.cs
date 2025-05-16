@@ -1,6 +1,6 @@
 ﻿namespace PHAN1
 {
-    partial class Form1
+    partial class Nhom_08
     {
         /// <summary>
         ///  Required designer variable.
@@ -36,6 +36,9 @@
             lblHoTen = new Label();
             lblNgaySinh = new Label();
             lblEmail = new Label();
+            btnThem = new Button();
+            btnLuu = new Button();
+            btnThoat = new Button();
             SuspendLayout();
             // 
             // ms_txtbox
@@ -109,11 +112,47 @@
             lblEmail.TabIndex = 7;
             lblEmail.Text = "Email";
             // 
-            // Form1
+            // btnThem
+            // 
+            btnThem.BackColor = SystemColors.ActiveCaption;
+            btnThem.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnThem.Location = new Point(172, 170);
+            btnThem.Name = "btnThem";
+            btnThem.Size = new Size(82, 37);
+            btnThem.TabIndex = 8;
+            btnThem.Text = "Thêm";
+            btnThem.UseVisualStyleBackColor = false;
+            // 
+            // btnLuu
+            // 
+            btnLuu.BackColor = SystemColors.ActiveCaption;
+            btnLuu.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnLuu.Location = new Point(251, 170);
+            btnLuu.Name = "btnLuu";
+            btnLuu.Size = new Size(82, 37);
+            btnLuu.TabIndex = 9;
+            btnLuu.Text = "Lưu";
+            btnLuu.UseVisualStyleBackColor = false;
+            // 
+            // btnThoat
+            // 
+            btnThoat.BackColor = SystemColors.ActiveCaption;
+            btnThoat.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnThoat.Location = new Point(331, 170);
+            btnThoat.Name = "btnThoat";
+            btnThoat.Size = new Size(82, 37);
+            btnThoat.TabIndex = 10;
+            btnThoat.Text = "Thoát";
+            btnThoat.UseVisualStyleBackColor = false;
+            // 
+            // Nhom_08
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(600, 391);
+            Controls.Add(btnThoat);
+            Controls.Add(btnLuu);
+            Controls.Add(btnThem);
             Controls.Add(lblEmail);
             Controls.Add(lblNgaySinh);
             Controls.Add(lblHoTen);
@@ -122,8 +161,9 @@
             Controls.Add(ngaysinh_txtbox);
             Controls.Add(ten_txtbox);
             Controls.Add(ms_txtbox);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "Nhom_08";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Nhóm 08";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -138,5 +178,8 @@
         private Label lblHoTen;
         private Label lblNgaySinh;
         private Label lblEmail;
+        private Button btnThem;
+        private Button btnLuu;
+        private Button btnThoat;
     }
 }

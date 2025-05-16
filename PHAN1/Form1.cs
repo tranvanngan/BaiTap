@@ -1,8 +1,8 @@
 namespace PHAN1
 {
-    public partial class Form1 : Form
+    public partial class Nhom_08 : Form
     {
-        public Form1()
+        public Nhom_08()
         {
             InitializeComponent();
         }
