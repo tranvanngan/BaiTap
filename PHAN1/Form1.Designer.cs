@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ms_txtbox = new TextBox();
-            ten_txtbox = new TextBox();
-            ngaysinh_txtbox = new TextBox();
-            email_txtbox = new TextBox();
+            txtMaSo = new TextBox();
+            txtHoTen = new TextBox();
+            txtNgaySinh = new TextBox();
+            txtEmail = new TextBox();
             lblMaSo = new Label();
             lblHoTen = new Label();
             lblNgaySinh = new Label();
@@ -39,37 +39,43 @@
             btnThem = new Button();
             btnLuu = new Button();
             btnThoat = new Button();
+            listView1 = new ListView();
+            maso = new ColumnHeader();
+            Hoten = new ColumnHeader();
+            ngaysinh = new ColumnHeader();
+            email = new ColumnHeader();
             SuspendLayout();
             // 
-            // ms_txtbox
+            // txtMaSo
             // 
-            ms_txtbox.Location = new Point(91, 4);
-            ms_txtbox.Name = "ms_txtbox";
-            ms_txtbox.Size = new Size(501, 23);
-            ms_txtbox.TabIndex = 0;
+            txtMaSo.Location = new Point(91, 4);
+            txtMaSo.Name = "txtMaSo";
+            txtMaSo.Size = new Size(501, 23);
+            txtMaSo.TabIndex = 0;
+            txtMaSo.TextChanged += ms_txtbox_TextChanged;
             // 
-            // ten_txtbox
+            // txtHoTen
             // 
-            ten_txtbox.Location = new Point(91, 43);
-            ten_txtbox.Name = "ten_txtbox";
-            ten_txtbox.Size = new Size(501, 23);
-            ten_txtbox.TabIndex = 1;
+            txtHoTen.Location = new Point(91, 43);
+            txtHoTen.Name = "txtHoTen";
+            txtHoTen.Size = new Size(501, 23);
+            txtHoTen.TabIndex = 1;
             // 
-            // ngaysinh_txtbox
+            // txtNgaySinh
             // 
-            ngaysinh_txtbox.Location = new Point(91, 84);
-            ngaysinh_txtbox.Name = "ngaysinh_txtbox";
-            ngaysinh_txtbox.Size = new Size(501, 23);
-            ngaysinh_txtbox.TabIndex = 2;
-            ngaysinh_txtbox.TextChanged += ngaysinh_txtbox_TextChanged;
+            txtNgaySinh.Location = new Point(91, 84);
+            txtNgaySinh.Name = "txtNgaySinh";
+            txtNgaySinh.Size = new Size(501, 23);
+            txtNgaySinh.TabIndex = 2;
+            txtNgaySinh.TextChanged += ngaysinh_txtbox_TextChanged;
             // 
-            // email_txtbox
+            // txtEmail
             // 
-            email_txtbox.Location = new Point(91, 122);
-            email_txtbox.Name = "email_txtbox";
-            email_txtbox.Size = new Size(501, 23);
-            email_txtbox.TabIndex = 3;
-            email_txtbox.TextChanged += email_txtbox_TextChanged;
+            txtEmail.Location = new Point(91, 122);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(501, 23);
+            txtEmail.TabIndex = 3;
+            txtEmail.TextChanged += email_txtbox_TextChanged;
             // 
             // lblMaSo
             // 
@@ -122,6 +128,7 @@
             btnThem.TabIndex = 8;
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = false;
+            btnThem.Click += btnThem_Click;
             // 
             // btnLuu
             // 
@@ -133,6 +140,7 @@
             btnLuu.TabIndex = 9;
             btnLuu.Text = "Lưu";
             btnLuu.UseVisualStyleBackColor = false;
+            btnLuu.Click += btnLuu_Click;
             // 
             // btnThoat
             // 
@@ -144,12 +152,50 @@
             btnThoat.TabIndex = 10;
             btnThoat.Text = "Thoát";
             btnThoat.UseVisualStyleBackColor = false;
+            btnThoat.Click += btnThoat_Click;
+            // 
+            // listView1
+            // 
+            listView1.Columns.AddRange(new ColumnHeader[] { maso, Hoten, ngaysinh, email });
+            listView1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            listView1.GridLines = true;
+            listView1.Location = new Point(1, 213);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(601, 178);
+            listView1.TabIndex = 11;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
+            // 
+            // maso
+            // 
+            maso.Text = "Mã số";
+            maso.Width = 100;
+            // 
+            // Hoten
+            // 
+            Hoten.Text = "Họ và tên";
+            Hoten.TextAlign = HorizontalAlignment.Center;
+            Hoten.Width = 150;
+            // 
+            // ngaysinh
+            // 
+            ngaysinh.Text = "Ngày sinh";
+            ngaysinh.TextAlign = HorizontalAlignment.Center;
+            ngaysinh.Width = 180;
+            // 
+            // email
+            // 
+            email.Text = "Email";
+            email.TextAlign = HorizontalAlignment.Center;
+            email.Width = 180;
             // 
             // Nhom_08
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(600, 391);
+            ClientSize = new Size(602, 391);
+            Controls.Add(listView1);
             Controls.Add(btnThoat);
             Controls.Add(btnLuu);
             Controls.Add(btnThem);
@@ -157,23 +203,24 @@
             Controls.Add(lblNgaySinh);
             Controls.Add(lblHoTen);
             Controls.Add(lblMaSo);
-            Controls.Add(email_txtbox);
-            Controls.Add(ngaysinh_txtbox);
-            Controls.Add(ten_txtbox);
-            Controls.Add(ms_txtbox);
+            Controls.Add(txtEmail);
+            Controls.Add(txtNgaySinh);
+            Controls.Add(txtHoTen);
+            Controls.Add(txtMaSo);
             Name = "Nhom_08";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Nhóm 08";
+            Load += Nhom_08_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox ms_txtbox;
-        private TextBox ten_txtbox;
-        private TextBox ngaysinh_txtbox;
-        private TextBox email_txtbox;
+        private TextBox txtMaSo;
+        private TextBox txtHoTen;
+        private TextBox txtNgaySinh;
+        private TextBox txtEmail;
         private Label lblMaSo;
         private Label lblHoTen;
         private Label lblNgaySinh;
@@ -181,5 +228,10 @@
         private Button btnThem;
         private Button btnLuu;
         private Button btnThoat;
+        private ListView listView1;
+        private ColumnHeader maso;
+        private ColumnHeader Hoten;
+        private ColumnHeader ngaysinh;
+        private ColumnHeader email;
     }
 }
