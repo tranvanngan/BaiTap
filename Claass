@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Bank.Model;
+using Microsoft.EntityFrameworkCore;
+
+namespace Bank.Data
+{
+    internal class BankContext : DbContext
+    {
+        public BankContext(DbContextOptions<BankContext> options)
+            : base(options)
+        {
+        }
+        public DbSet<bank_account> bank_accounts { get; set; }
+        public DbSet<transactions> transactions { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            
+        }
+    } 
+}
