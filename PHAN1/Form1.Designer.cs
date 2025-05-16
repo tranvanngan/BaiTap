@@ -32,54 +32,92 @@
             ten_txtbox = new TextBox();
             ngaysinh_txtbox = new TextBox();
             email_txtbox = new TextBox();
-            label1 = new Label();
+            lblMaSo = new Label();
+            lblHoTen = new Label();
+            lblNgaySinh = new Label();
+            lblEmail = new Label();
             SuspendLayout();
             // 
             // ms_txtbox
             // 
-            ms_txtbox.Location = new Point(163, 82);
+            ms_txtbox.Location = new Point(91, 4);
             ms_txtbox.Name = "ms_txtbox";
-            ms_txtbox.Size = new Size(322, 23);
+            ms_txtbox.Size = new Size(501, 23);
             ms_txtbox.TabIndex = 0;
             // 
             // ten_txtbox
             // 
-            ten_txtbox.Location = new Point(163, 121);
+            ten_txtbox.Location = new Point(91, 43);
             ten_txtbox.Name = "ten_txtbox";
-            ten_txtbox.Size = new Size(322, 23);
+            ten_txtbox.Size = new Size(501, 23);
             ten_txtbox.TabIndex = 1;
             // 
             // ngaysinh_txtbox
             // 
-            ngaysinh_txtbox.Location = new Point(163, 162);
+            ngaysinh_txtbox.Location = new Point(91, 84);
             ngaysinh_txtbox.Name = "ngaysinh_txtbox";
-            ngaysinh_txtbox.Size = new Size(322, 23);
+            ngaysinh_txtbox.Size = new Size(501, 23);
             ngaysinh_txtbox.TabIndex = 2;
             ngaysinh_txtbox.TextChanged += ngaysinh_txtbox_TextChanged;
             // 
             // email_txtbox
             // 
-            email_txtbox.Location = new Point(163, 200);
+            email_txtbox.Location = new Point(91, 122);
             email_txtbox.Name = "email_txtbox";
-            email_txtbox.Size = new Size(322, 23);
+            email_txtbox.Size = new Size(501, 23);
             email_txtbox.TabIndex = 3;
             email_txtbox.TextChanged += email_txtbox_TextChanged;
             // 
-            // label1
+            // lblMaSo
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(39, 85);
-            label1.Name = "label1";
-            label1.Size = new Size(39, 15);
-            label1.TabIndex = 4;
-            label1.Text = "Mã số";
+            lblMaSo.AutoSize = true;
+            lblMaSo.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblMaSo.Location = new Point(1, 4);
+            lblMaSo.Name = "lblMaSo";
+            lblMaSo.Size = new Size(55, 21);
+            lblMaSo.TabIndex = 4;
+            lblMaSo.Text = "Mã số";
+            lblMaSo.Click += label1_Click;
+            // 
+            // lblHoTen
+            // 
+            lblHoTen.AutoSize = true;
+            lblHoTen.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblHoTen.Location = new Point(1, 43);
+            lblHoTen.Name = "lblHoTen";
+            lblHoTen.Size = new Size(61, 21);
+            lblHoTen.TabIndex = 5;
+            lblHoTen.Text = "Họ tên";
+            // 
+            // lblNgaySinh
+            // 
+            lblNgaySinh.AutoSize = true;
+            lblNgaySinh.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblNgaySinh.Location = new Point(1, 84);
+            lblNgaySinh.Name = "lblNgaySinh";
+            lblNgaySinh.Size = new Size(87, 21);
+            lblNgaySinh.TabIndex = 6;
+            lblNgaySinh.Text = "Ngày sinh";
+            // 
+            // lblEmail
+            // 
+            lblEmail.AutoSize = true;
+            lblEmail.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblEmail.Location = new Point(1, 122);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(53, 21);
+            lblEmail.TabIndex = 7;
+            lblEmail.Text = "Email";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label1);
+            ClientSize = new Size(600, 391);
+            Controls.Add(lblEmail);
+            Controls.Add(lblNgaySinh);
+            Controls.Add(lblHoTen);
+            Controls.Add(lblMaSo);
             Controls.Add(email_txtbox);
             Controls.Add(ngaysinh_txtbox);
             Controls.Add(ten_txtbox);
@@ -96,6 +134,9 @@
         private TextBox ten_txtbox;
         private TextBox ngaysinh_txtbox;
         private TextBox email_txtbox;
-        private Label label1;
+        private Label lblMaSo;
+        private Label lblHoTen;
+        private Label lblNgaySinh;
+        private Label lblEmail;
     }
 }
